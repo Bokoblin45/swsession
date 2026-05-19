@@ -3,30 +3,31 @@ use std::io;
 
 
 fn main() {
-    println!("pick DE (case sensitive): 
-    Hyprland
+    println!("pick DE: 
+    1: Hyprland 
     -dynamic tyling wm with in this case end_4 ii dots.
     
-    Gamescope
+    2: Gamescope 
     -Steamos session for purely gaming, great on handhelds.
     
-    Plasma
+    3: Plasma 
     -stacking DE, works great with a steam deck, thing that you use when you click desktop mode in gamescope.");
+    
     let mut input = String::new();
-
+    
     io::stdin().read_line(&mut input).unwrap();
-    let input = input.trim();
+    let input = input.trim().to_lowercase();
 
-    if input == "Hyprland" {
+    if input == "1" {
         let (_ret_val, stdout, stderr) = rash!("systemctl --user mask cachyos-gamescope-autologin.service && pkexec /usr/lib/steamos/steam-set-session hyprland.desktop").unwrap();
         println!("session set to hyprland, {stdout} {stderr}");
 
     }
-    else if input == "Gamescope" {
+    else if input == "2" {
     let (_ret_val, stdout, stderr) = rash!("steamos-session-select oneshot").unwrap();
     println!("session set to: Gamescope, {stdout} {stderr}");
     }
-    else if input == "Plasma" {
+    else if input == "3" {
         let (_ret_val, stdout, stderr) = rash!("systemctl --user mask cachyos-gamescope-autologin.service && pkexec /usr/lib/steamos/steam-set-session plasma.desktop").unwrap();
         println!("session set to plasma, {stdout} {stderr}");
     }
