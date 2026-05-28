@@ -1,0 +1,11 @@
+/home/deck/Documents/GitHub/rust-cachyos-handheld-session-switcher-for-hyprland/target/release/deps/rsbash-66d965b5e5efc6ee.d: /home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/lib.rs /home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/command.rs /home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/error.rs /home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/process.rs /home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/shell.rs
+
+/home/deck/Documents/GitHub/rust-cachyos-handheld-session-switcher-for-hyprland/target/release/deps/librsbash-66d965b5e5efc6ee.rlib: /home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/lib.rs /home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/command.rs /home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/error.rs /home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/process.rs /home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/shell.rs
+
+/home/deck/Documents/GitHub/rust-cachyos-handheld-session-switcher-for-hyprland/target/release/deps/librsbash-66d965b5e5efc6ee.rmeta: /home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/lib.rs /home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/command.rs /home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/error.rs /home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/process.rs /home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/shell.rs
+
+/home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/lib.rs:
+/home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/command.rs:
+/home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/error.rs:
+/home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/process.rs:
+/home/deck/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rsbash-2.1.0/src/shell.rs:
