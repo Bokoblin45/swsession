@@ -3,8 +3,8 @@ use std::io;
 
 
 fn main() {
-    let (_return, stdout, _stderror) = rash!("loginctl session-status | grep Desktop:");
-    println!("{stdout}");
+    let (_ret_val, stdout, _stderr) = rash!("loginctl session-status | grep Desktop:").unwrap();
+    println!("current {stdout}");
     println!("pick DE: 
     1: Hyprland 
     -dynamic tyling wm with in this case end_4 ii dots.
