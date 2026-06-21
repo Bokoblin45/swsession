@@ -13,7 +13,10 @@ fn main() {
     -Steamos session for purely gaming, great on handhelds.
     
     3: Plasma 
-    -stacking DE, works great with a steam deck, thing that you use when you click desktop mode in gamescope.");
+    -stacking DE, works great with a steam deck, thing that you use when you click desktop mode in gamescope.
+    
+    4: niri
+    -scrollable tiling wm with iNiR dotfiles.");
     
     let mut input = String::new();
     
@@ -32,6 +35,10 @@ fn main() {
     else if input == "3" {
         let (_ret_val, stdout, stderr) = rash!("systemctl --user mask cachyos-gamescope-autologin.service && pkexec /usr/lib/steamos/steam-set-session plasma.desktop").unwrap();
         println!("session set to plasma, {stdout} {stderr}");
+    }
+    else if input == "4" {
+        let (_ret_val, stdout, stderr) = rash!("systemctl --user mask cachyos-gamescope-autologin.service && pkexec /usr/lib/steamos/steam-set-session niri.desktop").unwrap();
+        println!("session set to niri, {stdout} {stderr}");
     }
     else {
         println!("pick a valid option, you typed: {input} ");
