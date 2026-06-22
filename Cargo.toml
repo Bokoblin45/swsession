@@ -1,5 +1,5 @@
 [package]
-name = "switch-to-session-deck-rust"
+name = "swsession"
 version = "0.1.0"
 edition = "2024"
 
