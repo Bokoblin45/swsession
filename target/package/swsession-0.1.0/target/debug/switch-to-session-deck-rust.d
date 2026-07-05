@@ -1,0 +1,1 @@
+/home/deck/Documents/GitHub/rust-cachyos-handheld-session-switcher-for-hyprland/target/debug/switch-to-session-deck-rust: /home/deck/Documents/GitHub/rust-cachyos-handheld-session-switcher-for-hyprland/src/main.rs
