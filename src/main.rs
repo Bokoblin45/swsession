@@ -24,7 +24,7 @@ fn main() {
     let input = input.trim().to_lowercase();
 
     if input == "1" {
-        let (_ret_val, stdout, stderr) = rash!("systemctl --user mask cachyos-gamescope-autologin.service && pkexec /usr/lib/steamos/steam-set-session hyprland.desktop").unwrap();
+        let (_ret_val, stdout, stderr) = rash!("pkexec /usr/lib/steamos/steam-set-session hyprland.desktop").unwrap();
         println!("session set to hyprland, {stdout} {stderr}");
 
     }
@@ -33,7 +33,7 @@ fn main() {
     println!("session set to: Gamescope, {stdout} {stderr}");
     }
     else if input == "3" {
-        let (_ret_val, stdout, stderr) = rash!("systemctl --user mask cachyos-gamescope-autologin.service && pkexec /usr/lib/steamos/steam-set-session plasma.desktop").unwrap();
+        let (_ret_val, stdout, stderr) = rash!("pkexec /usr/lib/steamos/steam-set-session plasma.desktop").unwrap();
         println!("session set to plasma, {stdout} {stderr}");
     }
     else if input == "4" {
