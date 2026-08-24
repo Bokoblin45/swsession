@@ -4,7 +4,10 @@ use std::io;
 
 fn main() {
     let (_ret_val, stdout, _stderr) = rash!("loginctl session-status | grep Desktop:").unwrap();
-    println!("current {stdout}");
+    println!("Active: {stdout}");
+    let (_, active, err) = rash!("cat /etc/plasmalogin.conf.d/zz-steamos-autologin.conf | grep .desktop").unwrap();
+    println!("Selected: {active}");
+    println!("{err}");
     println!("pick DE: 
     1: Hyprland 
     -dynamic tyling wm with in this case end_4 ii dots.
@@ -16,7 +19,10 @@ fn main() {
     -stacking DE, works great with a steam deck, thing that you use when you click desktop mode in gamescope.
     
     4: niri
-    -scrollable tiling wm with iNiR dotfiles.");
+    -scrollable tiling wm with iNiR dotfiles.
+    
+    5: COSMIC
+    -system76's new DE, written in rust");
     
     let mut input = String::new();
     
@@ -37,9 +43,14 @@ fn main() {
         println!("session set to plasma, {stdout} {stderr}");
     }
     else if input == "4" {
-        let (_ret_val, stdout, stderr) = rash!("systemctl --user mask cachyos-gamescope-autologin.service && pkexec /usr/lib/steamos/steam-set-session niri.desktop").unwrap();
+        let (_ret_val, stdout, stderr) = rash!("pkexec /usr/lib/steamos/steam-set-session niri.desktop").unwrap();
         println!("session set to niri, {stdout} {stderr}");
     }
+    else if input == "5" {
+        let (_ret_val, stdout, stderr) = rash!("pkexec /usr/lib/steamos/steam-set-session cosmic.desktop").unwrap();
+        println!("session set to COSMIC, {stdout} {stderr}");
+    }
+    
     else {
         println!("pick a valid option, you typed: {input} ");
     };
