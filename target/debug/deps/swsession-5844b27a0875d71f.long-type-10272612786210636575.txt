@@ -1,0 +1,2 @@
+for<'a> StrSearcher<'a, '_>: DoubleEndedSearcher<'a>
+CharPredicateSearcher<'a, F>
