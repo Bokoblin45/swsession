@@ -4,7 +4,8 @@ use std::io;
 
 fn main() {
     let (_ret_val, stdout, _stderr) = rash!("loginctl session-status | grep Desktop:").unwrap();
-    println!("Active: {stdout}");
+    let now = stdout.trim_start_matches("Desktop:");
+    println!("Active: {now}");
     let (_, active_r, err) = rash!("cat /etc/plasmalogin.conf.d/zz-steamos-autologin.conf | grep .desktop").unwrap();
     let active_st = active_r.trim().trim_start_matches("Session=");
     let active = active_st.trim_end_matches(".desktop");
