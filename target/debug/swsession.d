@@ -1,1 +1,1 @@
-/home/deck/Documents/GitHub/swsession/target/debug/swsession: /home/deck/Documents/GitHub/swsession/src/main.rs
+/home/deck/Projects/swsession/target/debug/swsession: /home/deck/Projects/swsession/src/main.rs
