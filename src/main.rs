@@ -5,24 +5,24 @@ use rsbash::rash;
 
 fn main() {
     let (_ret_val, stdout, _stderr) = rash!("loginctl session-status | grep Desktop:").expect("Failed to fetch active desktop info");
-    let now = stdout.trim_start_matches("Desktop:");
-    println!("Active: {now}");
+    let active = stdout.trim_start_matches("Desktop:").trim();
+    println!("Active: {active}");
     let (_, active_r, err) = rash!("cat /etc/plasmalogin.conf.d/zz-steamos-autologin.conf | grep .desktop").expect("failed to fetch selected session, are you sure you are using plasmalogin and your autologin is in /etc/plasmalogin.conf.d/zz-steamos-autologin.conf ?");
     let active_st = active_r.trim().trim_start_matches("Session=");
-    let active = active_st.trim_end_matches(".desktop");
-    println!("Selected: {active}");
-    print!("  {err}");
+    let selected = active_st.trim_end_matches(".desktop");
+    println!("Selected: {selected}");
+    println!("{err}");
     let mut map = HashMap::new();
     let mut now = 0;
     let wayland_sessions_try= fs::read_dir("/usr/share/wayland-sessions"); // read default wayland session directory, make sure it doesn't error if it doesn't exist
     match wayland_sessions_try {
         Ok(wayland_sessions) => {
-            println!("Available wayland sessions:");
+            println!("Available sessions:");
             for path in wayland_sessions {
                 let entry = path.expect("found no wayland sessions in /usr/share/wayland-sessions. (does the directory exist?)");
                 now += 1;
 
-                println!("{}: {}", now, entry.file_name().to_string_lossy().trim_end_matches(".desktop"));
+                println!("{}: {} (wayland)", now, entry.file_name().to_string_lossy().trim_end_matches(".desktop"));
                 map.entry(now.to_string()).or_insert(entry);
             }
         },
@@ -32,12 +32,11 @@ fn main() {
     let xsessions_try= fs::read_dir("/usr/share/xsessions"); // read default xsession directory, make sure it doesn't error if it doesn't exist
     match xsessions_try {
         Ok(xsessions) => {
-            println!("\nAvailable x sessions:");
             for path in xsessions {
                 let entry = path.expect("found no xsessions. (does the directory exist?)");
                 now += 1;
 
-                println!("{}: {}", now, entry.file_name().to_string_lossy().trim_end_matches(".desktop"));
+                println!("{}: {} (x)", now, entry.file_name().to_string_lossy().trim_end_matches(".desktop"));
                 map.entry(now.to_string()).or_insert(entry);
             }
         },
